@@ -1,3 +1,9 @@
+# 概要
+
+- AWS Lambda APIGateway DynamoDB S3 を用いたサーバレスアプリケーション
+- DynamoDB や S3 へのアクセスを interface で抽象化
+- Localstack を用いた自動テスト
+
 # セットアップ
 
 ## デプロイ
