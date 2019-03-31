@@ -5,6 +5,7 @@
 ```
 git clone https://github.com/dyoshikawa/aws-serverless-uploader-go
 cd aws-serverless-uploader-go
+yarn
 make deploy
 ```
 

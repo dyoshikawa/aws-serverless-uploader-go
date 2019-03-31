@@ -75,6 +75,14 @@
   version = "v2.1.1"
 
 [[projects]]
+  branch = "master"
+  digest = "1:d35ecafdab4485bc665ec1e24451fb248cb3a8a6dddb73e43c987def47de3a13"
+  name = "github.com/fnproject/fdk-go"
+  packages = ["."]
+  pruneopts = ""
+  revision = "dd1c7357967e25be4471b8fa6523f1acc323aea2"
+
+[[projects]]
   digest = "1:709292c015123a3bc69ea970dc9abd6667170e7fbf5cdeb10c6d14b250d3385f"
   name = "github.com/go-playground/locales"
   packages = [
@@ -169,6 +177,7 @@
     "github.com/aws/aws-sdk-go/aws/session",
     "github.com/aws/aws-sdk-go/service/s3",
     "github.com/aws/aws-sdk-go/service/s3/s3manager",
+    "github.com/fnproject/fdk-go",
     "github.com/google/uuid",
     "github.com/guregu/dynamo",
     "github.com/nfnt/resize",

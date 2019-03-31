@@ -21,3 +21,4 @@ vendor
 *.out
 
 .envrc
+node_modules

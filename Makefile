@@ -18,13 +18,13 @@ clean:
 	rm -rf ./bin ./vendor Gopkg.lock
 
 deploy: build
-	sls deploy --stage dev
+	yarn run sls deploy --stage dev
 
 remove:
-	sls remove --stage dev
+	yarn run sls remove --stage dev
 
 prod-deploy: clean build
-	sls deploy --stage prod
+	yarn run sls deploy --stage prod
 
 localstack-setup: localstack-setup-s3 localstack-setup-dynamodb
 
