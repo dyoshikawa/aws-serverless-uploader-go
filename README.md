@@ -17,9 +17,9 @@
 
 ## 環境
 
-- Go v1.11.2
+- Go 1.11.2
 - dep
-- node -v 8.11.0
+- Node 8.11.0
 - npm or yarn
 - aws-cli
 - direnv
