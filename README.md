@@ -1,0 +1,3 @@
+```
+aws configure --profile localstack
+```
