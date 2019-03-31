@@ -7,12 +7,22 @@
 - AWS Lambda APIGateway DynamoDB S3 を用いたサーバレスアプリケーション
 - DynamoDB や S3 へのアクセスを interface で抽象化
 - Localstack を用いた自動テスト
+- フロントエンドは React + TypeScript + Netlify
 
 # フロントエンド
 
 [aws-serverless-uploader-frontend](https://github.com/dyoshikawa/aws-serverless-uploader-frontend)
 
 # セットアップ
+
+## 環境
+
+- Go v1.11.2
+- dep
+- node -v 8.11.0
+- npm or yarn
+- aws-cli
+- direnv
 
 ## デプロイ
 
@@ -38,6 +48,7 @@ Default output format [None]: json
 ### Localstack 起動とセットアップ
 
 ```
+cp .envrc.example .envrc
 docker-compose up -d
 make localstack-setup
 ```
