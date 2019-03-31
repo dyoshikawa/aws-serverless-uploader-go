@@ -4,6 +4,10 @@
 - DynamoDB や S3 へのアクセスを interface で抽象化
 - Localstack を用いた自動テスト
 
+# フロントエンド
+
+[aws-serverless-uploader-frontend](https://github.com/dyoshikawa/aws-serverless-uploader-frontend)
+
 # セットアップ
 
 ## デプロイ
