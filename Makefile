@@ -29,19 +29,19 @@ prod-deploy: clean build
 localstack-setup: localstack-setup-s3 localstack-setup-dynamodb
 
 localstack-setup-s3:
-	aws --profile localstack --endpoint-url=http://localhost:4572 s3 mb s3://${S3_BUCKET_FILES}
-	aws --profile localstack --endpoint-url=http://localhost:4572 s3api put-bucket-acl --bucket ${S3_BUCKET_FILES} --acl public-read
+	aws --profile localstack --endpoint-url=${LOCALSTACK_ENDPOINT_URL_S3} s3 mb s3://${S3_BUCKET_FILES}
+	aws --profile localstack --endpoint-url=${LOCALSTACK_ENDPOINT_URL_S3} s3api put-bucket-acl --bucket ${S3_BUCKET_FILES} --acl public-read
 
 localstack-setup-dynamodb:
-	aws --profile localstack --endpoint-url=http://localhost:4569 dynamodb create-table \
+	aws --profile localstack --endpoint-url=${LOCALSTACK_ENDPOINT_URL_DYNAMODB} dynamodb create-table \
 		--table-name ${APP_NAME}-${STAGE}-Images \
 		--cli-input-json file://cli-input-json/dynamodb-table-images-create.json
 
 localstack-s3-uploads:
-	aws --endpoint-url http://localhost:4572 s3 ls s3://test
+	aws --endpoint-url ${LOCALSTACK_ENDPOINT_URL_S3} s3 ls s3://${S3_BUCKET_FILES}
 
 localstack-tables:
-	aws --endpoint-url=http://localhost:4569 dynamodb list-tables
+	aws --endpoint-url=${LOCALSTACK_ENDPOINT_URL_DYNAMODB} dynamodb list-tables
 
 localstack-table-images:
-	aws --endpoint-url=http://localhost:4569 dynamodb scan --table-name ${APP_NAME}-${STAGE}-Images
+	aws --endpoint-url=${LOCALSTACK_ENDPOINT_URL_DYNAMODB} dynamodb scan --table-name ${APP_NAME}-${STAGE}-Images
