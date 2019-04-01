@@ -1,3 +1,5 @@
+export GO111MODULE=on
+
 export APP_NAME=TEST
 export STAGE=test
 export REGION=us-east-1

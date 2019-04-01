@@ -1,7 +1,10 @@
 .PHONY: build clean deploy
 
+dep:
+	go mod vendor
+
 build:
-	dep ensure -v
+	go mod tidy
 	env GOOS=linux go build -ldflags="-s -w" -o bin/images-get src/handlers/images/index/main.go
 	env GOOS=linux go build -ldflags="-s -w" -o bin/images-put src/handlers/images/store/main.go
 
@@ -10,12 +13,8 @@ test:
 	go test -v ./src/infrastructures/storage
 	go test -v ./src/infrastructures/db/repositories
 
-test-no-cache:
-	go clean -cache
-	make test
-
 clean:
-	rm -rf ./bin ./vendor Gopkg.lock
+	rm -rf ./bin ./vendor
 
 deploy: build
 	yarn run sls deploy --stage dev
